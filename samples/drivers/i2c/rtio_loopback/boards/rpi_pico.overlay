@@ -1,0 +1,23 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
+/*
+ * I2C0_SDA : P4
+ * I2C0_SCL : P5
+ * I2C1_SDA : P6
+ * I2C1_SCL : P7
+ *
+ * Short the same nets together for the test to pass.
+ */
+
+/ {
+	aliases {
+		i2c-controller = &i2c0;
+		i2c-controller-target = &i2c1;
+	};
+};
+&i2c0 {
+	status = "okay";
+};
+&i2c1 {
+	status = "okay";
+};
